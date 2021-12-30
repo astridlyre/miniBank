@@ -1,0 +1,15 @@
+.section {
+  margin: var(--md-spacing) 0;
+}
+
+.title {
+  margin-bottom: var(--base-spacing);
+}
+
+.ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--base-spacing);
+}

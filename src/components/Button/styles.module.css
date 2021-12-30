@@ -1,0 +1,18 @@
+.button {
+  padding: var(--base-spacing);
+  border: none;
+  background: var(--secondary);
+  color: var(--light-fg);
+  border-radius: var(--base-unit);
+  box-shadow: var(--dark-box-shadow);
+}
+
+.contained {
+  width: 100%;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: var(--default-fg);
+  box-shadow: var(--darker-box-shadow);
+}

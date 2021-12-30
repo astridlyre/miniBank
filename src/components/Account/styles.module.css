@@ -1,0 +1,18 @@
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sm-spacing);
+  background-color: var(--light-bg);
+  border-radius: var(--base-unit);
+  box-shadow: var(--light-box-shadow);
+}
+
+.accountAmount {
+  color: var(--default-fg);
+  font-weight: 600;
+}
+
+.accountCurrency {
+  font-weight: 500;
+}

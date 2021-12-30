@@ -1,0 +1,39 @@
+.form {
+  background-color: var(--primary);
+  padding: var(--sm-spacing);
+  border-radius: var(--base-unit);
+  margin-top: var(--md-spacing);
+  max-width: 24rem;
+}
+
+@media (min-width: 800px) {
+  .form {
+    padding: var(--md-spacing);
+  }
+}
+
+.formTitle {
+  margin: var(--base-spacing);
+  font-size: var(--md-spacing);
+  text-align: center;
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: var(--base-spacing);
+  font-size: var(--h5);
+  background-color: var(--default-fg);
+  border-radius: 100%;
+  vertical-align: top;
+}
+
+.inputs {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--base-spacing);
+  margin: var(--md-spacing) 0;
+}

@@ -1,0 +1,94 @@
+{
+  "env": {
+    "jest": true,
+    "browser": true,
+    "es2021": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "no-use-before-define": "error",
+    "require-atomic-updates": "error",
+    "accessor-pairs": "error",
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "grouped-accessor-pairs": "error",
+    "max-params": [
+      "error",
+      3
+    ],
+    "complexity": "error",
+    "no-else-return": "error",
+    "no-lonely-if": "error",
+    "no-magic-numbers": [
+      "warn",
+      {
+        "ignore": [
+          -1,
+          0,
+          1,
+          2
+        ],
+        "ignoreArrayIndexes": true,
+        "ignoreDefaultValues": true,
+        "enforceConst": true
+      }
+    ],
+    "no-shadow": "error",
+    "no-unneeded-ternary": "error",
+    "no-var": "error",
+    "operator-assignment": [
+      "error",
+      "always"
+    ],
+    "prefer-const": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "react/boolean-prop-naming": "error",
+    "react/button-has-type": "warn",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/self-closing-comp": "warn",
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "ignoreRefs": true,
+        "allowFunctions": true
+      }
+    ],
+    "react/sort-comp": "warn"
+  }
+}

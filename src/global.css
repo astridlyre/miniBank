@@ -1,0 +1,40 @@
+/* Global CSS variables */
+:root {
+  --base-font: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --white: #fff;
+  --black: #222;
+  --gray: #efefef;
+
+  --base-unit: 0.25rem;
+  --base-spacing: calc(var(--base-unit) * 2);
+  --sm-spacing: calc(var(--base-spacing) * 2);
+  --md-spacing: calc(var(--sm-spacing) * 2);
+
+  --light-bg: #fffffe;
+  --default-bg: #fef6e4;
+  --default-fg: #001858;
+  --light-fg: #172c66;
+  --primary: #f3d2c1;
+  --secondary: #8bd3dd;
+  --tertiary: #f582ae;
+
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --h4: 1.563rem;
+  --h5: 1.25rem;
+  --base-font: 1rem;
+  --small-font: 0.9rem;
+  --tiny-font: 0.8rem;
+
+  --light-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --dark-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.165);
+  --darker-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font: 1rem / 1.5 var(--base-font);
+  background-color: var(--default-bg);
+  color: var(--light-fg);
+}

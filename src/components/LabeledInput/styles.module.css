@@ -1,0 +1,26 @@
+.label {
+  display: flex;
+}
+
+.horizontal {
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: var(--base-spacing);
+}
+
+.vertical {
+  flex-flow: column nowrap;
+}
+
+.labelText {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.input {
+  padding: var(--base-spacing);
+  background-color: var(--light-bg);
+  border: none;
+  border-radius: var(--base-unit);
+  box-shadow: var(--light-box-shadow);
+}
