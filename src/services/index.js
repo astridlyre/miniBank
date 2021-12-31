@@ -3,7 +3,7 @@ import * as LocalStorageService from './LocalStorageService'
 
 export const strategy = multi(
   method(
-    (key) => key === 'user' || key === 'token',
+    (key) => key === 'user' || key === 'token' || key === 'theme',
     () => LocalStorageService,
   ),
 )

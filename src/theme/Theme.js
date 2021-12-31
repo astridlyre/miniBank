@@ -1,24 +1,36 @@
-import { createContext, useMemo, useState } from 'react'
+import { createContext, useMemo, useEffect, useState, useCallback } from 'react'
+import { strategy } from '../services/'
 import * as styles from './styles.module.css'
 
-export const THEMES = ['light', 'dark', 'yellow', 'pink', 'blue']
+const INITIAL_THEME = 'blue'
+const service = strategy('theme')
 
+export const THEMES = ['light', 'dark', 'yellow', 'pink', 'blue']
+export const ThemeContext = createContext(INITIAL_THEME)
 export const INVERT_THEME_MAP = {
   light: 'dark',
   dark: 'light',
 }
 
-const INITIAL_THEME = 'blue'
-
-export const ThemeContext = createContext(INITIAL_THEME)
-
 export function Theme({ children }) {
   const [currentTheme, setCurrentTheme] = useState(INITIAL_THEME)
 
-  const value = useMemo(
-    () => [currentTheme, setCurrentTheme],
-    [currentTheme, setCurrentTheme],
+  const setter = useCallback(
+    (theme) => {
+      setCurrentTheme(theme)
+      service.save('theme', theme)
+    },
+    [setCurrentTheme],
   )
+
+  const value = useMemo(() => [currentTheme, setter], [currentTheme, setter])
+
+  useEffect(() => {
+    const storedTheme = service.load('theme')
+    if (storedTheme) {
+      setCurrentTheme(storedTheme)
+    }
+  }, [])
 
   return (
     <ThemeContext.Provider value={value}>
