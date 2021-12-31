@@ -19,4 +19,5 @@
   flex-basis: 100%;
   width: 100%;
   padding: var(--sm-spacing);
+  color: var(--light-fg);
 }

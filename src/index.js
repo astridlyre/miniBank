@@ -1,16 +1,12 @@
-import { StrictMode } from 'react'
 import { render } from 'react-dom'
 import { App } from './App'
-import { Store } from './store/'
-import { ErrorBoundary } from './errors/'
+import { Providers } from './providers'
+import { ThemeSwitcher } from './theme/'
 
 render(
-  <StrictMode>
-    <ErrorBoundary>
-      <Store>
-        <App />
-      </Store>
-    </ErrorBoundary>
-  </StrictMode>,
+  <Providers>
+    <App />
+    <ThemeSwitcher />
+  </Providers>,
   document.getElementById('root'),
 )

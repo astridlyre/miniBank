@@ -1,0 +1,86 @@
+.light {
+  --light-bg: #fffffe;
+  --default-bg: #fef6e4;
+  --default-fg: #001858;
+  --light-fg: #172c66;
+  --primary: #f3d2c1;
+  --secondary: #8bd3dd;
+  --tertiary: #f582ae;
+}
+
+.dark {
+  --light-bg: #0f0e17;
+  --default-bg: black;
+  --default-fg: #a7a9be;
+  --light-fg: #fffffe;
+  --primary: #f25f4c;
+  --secondary: #e53170;
+  --tertiary: #ff8906;
+}
+
+.yellow {
+  --light-bg: #fffffe;
+  --default-bg: #e3f6f5;
+  --default-fg: #272343;
+  --light-fg: #2d334a;
+  --primary: #e3f6f5;
+  --secondary: #bae8e8;
+  --tertiary: #ffd803;
+}
+
+.pink {
+  --light-bg: white;
+  --default-bg: #f9f8fc;
+  --default-fg: #0e172c;
+  --light-fg: #0e172c;
+  --primary: #fec7d7;
+  --secondary: #d9d4e7;
+  --tertiary: #a786df;
+}
+
+.blue {
+  --light-bg: #fffffe;
+  --default-bg: #d8eefe;
+  --default-fg: #094067;
+  --light-fg: #516c7b;
+  --primary: #90b4ce;
+  --secondary: #3da9fc;
+  --tertiary: #ef4565;
+}
+
+.switcher {
+  position: absolute;
+  bottom: var(--base-unit);
+  right: var(--base-unit);
+  background-color: var(--light-bg);
+  padding: var(--base-unit);
+  border-radius: var(--base-unit);
+}
+
+.switcherUl {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--base-unit);
+}
+
+.switcherTitle {
+  font-size: var(--small-font);
+  color: var(--default-fg);
+  text-align: center;
+}
+
+.switcherButton {
+  border: none;
+  background: none;
+  padding: var(--base-unit);
+  color: var(--default-fg);
+}
+
+.switcherButton:hover {
+  background-color: var(--secondary);
+  color: var(--default-fg);
+  cursor: pointer;
+  border-radius: var(--base-unit);
+}

@@ -27,4 +27,5 @@
   border: none;
   border-radius: var(--base-unit);
   box-shadow: var(--light-box-shadow);
+  color: var(--light-fg);
 }

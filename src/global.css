@@ -11,14 +11,6 @@
   --sm-spacing: calc(var(--base-spacing) * 2);
   --md-spacing: calc(var(--sm-spacing) * 2);
 
-  --light-bg: #fffffe;
-  --default-bg: #fef6e4;
-  --default-fg: #001858;
-  --light-fg: #172c66;
-  --primary: #f3d2c1;
-  --secondary: #8bd3dd;
-  --tertiary: #f582ae;
-
   --h1: 3.052rem;
   --h2: 2.441rem;
   --h3: 1.953rem;
@@ -28,15 +20,8 @@
   --small-font: 0.9rem;
   --tiny-font: 0.8rem;
 
-  --light-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --dark-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  --darker-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-body {
-  font: 1rem / 1.5 var(--base-font);
-  background-color: var(--default-bg);
-  color: var(--light-fg);
+  --light-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  --dark-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .primary {

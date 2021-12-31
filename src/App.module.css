@@ -3,6 +3,10 @@
   flex-flow: column nowrap;
   align-items: center;
   padding: var(--base-unit);
+  font: 1rem / 1.5 var(--base-font);
+  background-color: var(--default-bg);
+  color: var(--light-fg);
+  min-height: 100vh;
 }
 
 @media (min-width: 800px) {

@@ -1,7 +1,8 @@
 .main {
   margin-top: var(--md-spacing);
   width: 100%;
-  background: var(--primary);
+  background: var(--light-bg);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
   border-radius: var(--base-unit);
   padding: var(--sm-spacing);
 }
