@@ -1,14 +1,13 @@
-import { useCallback, useState } from 'react'
+import { useState, useCallback } from 'react'
 import { Account } from '../Account/'
 import * as styles from './styles.module.css'
 
 export function Accounts({ accounts }) {
   const [expanded, setExpanded] = useState(null)
-
-  const onUpdate = useCallback((nextState, id) => {
-    setExpanded(id)
-    return nextState
-  }, [])
+  const onUpdate = useCallback(
+    (id, state) => (state.expanded ? setExpanded(id) : setExpanded(null)),
+    [setExpanded],
+  )
 
   return (
     <section className={styles.section}>
@@ -19,7 +18,6 @@ export function Accounts({ accounts }) {
             key={account.id}
             {...account}
             expanded={expanded === account.id}
-            id={account.id}
             onUpdate={onUpdate}
           />
         ))}

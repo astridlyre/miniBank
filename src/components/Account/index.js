@@ -1,15 +1,24 @@
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { ErrorBoundary } from '../../errors/'
 import { Expandable } from '../Expandable/'
 import { AccountActions } from '../AccountActions/'
 import { Header } from './Header'
 import * as styles from './styles.module.css'
 
-export function Account({ type, currency, amount, id }) {
+export function Account({ type, currency, amount, id, expanded, onUpdate }) {
+  const onUpdateInner = useCallback(
+    (state) => onUpdate(id, state),
+    [id, onUpdate],
+  )
+
   return useMemo(
     () => (
       <ErrorBoundary>
-        <Expandable className={styles.root}>
+        <Expandable
+          expanded={expanded}
+          onUpdate={onUpdateInner}
+          className={styles.root}
+        >
           <Expandable.Header className={styles.accountHeader}>
             <Header type={type} currency={currency} amount={amount} />
           </Expandable.Header>
@@ -19,6 +28,6 @@ export function Account({ type, currency, amount, id }) {
         </Expandable>
       </ErrorBoundary>
     ),
-    [type, currency, amount, id],
+    [type, currency, amount, id, expanded, onUpdateInner],
   )
 }
