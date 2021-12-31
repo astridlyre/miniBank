@@ -23,10 +23,7 @@ export function ThemeSwitcher() {
     [setCurrentTheme, setIsShowing],
   )
 
-  const toggle = useCallback(
-    () => (console.log(isShowing), setIsShowing((s) => !s)),
-    [setIsShowing, isShowing],
-  )
+  const toggle = useCallback(() => setIsShowing((s) => !s), [setIsShowing])
 
   return (
     <div className={styles.switcher}>

@@ -8,6 +8,7 @@ const selectUser = (state) => state.user
 
 export function App() {
   const user = useStore(selectUser)
+
   return (
     <main className={styles.root}>
       <ErrorBoundary>

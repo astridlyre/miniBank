@@ -1,9 +1,9 @@
-function save(key, value) {
+async function save(key, value) {
   localStorage.setItem(key, JSON.stringify(value))
   return value
 }
 
-function load(key) {
+async function load(key) {
   const savedValue = localStorage.getItem(key)
 
   try {
@@ -14,11 +14,11 @@ function load(key) {
   }
 }
 
-function remove(key) {
+async function remove(key) {
   return localStorage.removeItem(key)
 }
 
-function clear() {
+async function clear() {
   return localStorage.clear()
 }
 

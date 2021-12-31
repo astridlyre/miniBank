@@ -1,7 +1,7 @@
 import { nanoid } from '@ebflat9/fp'
 import { useCallback, useEffect } from 'react'
 import { useDispatch, useDependency } from '../../hooks/'
-import { actionLogin } from '../../store/actions'
+import { login } from '../../store/actionCreators'
 import { AnimatePresence, motion } from 'framer-motion'
 import { LabeledInput } from '../LabeledInput/'
 import { Button } from '../Button/'
@@ -34,14 +34,12 @@ export function Login() {
       event.preventDefault()
       const loginInfo = Object.fromEntries(new FormData(event.target))
       event.target.reset()
-      dispatch(
-        actionLogin({ name: loginInfo.username, accounts: TEST_ACCOUNTS }),
-      )
+      dispatch(login({ name: loginInfo.username, accounts: TEST_ACCOUNTS }))
     },
     [dispatch],
   )
 
-  useEffect(() => user && dispatch(actionLogin(user)))
+  useEffect(() => user && dispatch(login(user)))
 
   return (
     <AnimatePresence>

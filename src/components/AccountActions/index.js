@@ -1,6 +1,6 @@
 import { multi, method } from '@ebflat9/fp'
 import { useDispatch } from '../../hooks/'
-import { actionDepositFunds, actionWithdrawFunds } from '../../store/actions'
+import { depositFunds, withdrawFunds } from '../../store/actionCreators'
 import { useState, useCallback } from 'react'
 import { Button } from '../Button/'
 import { AccountActionsForm } from '../AccountActionsForm/'
@@ -10,8 +10,8 @@ const WITHDRAWL_ACTION = { text: 'Withdraw', type: 'withdraw' }
 const DEPOSIT_ACTION = { text: 'Deposit', type: 'deposit' }
 
 const performFundsAction = multi(
-  method(({ action }) => action === WITHDRAWL_ACTION, actionWithdrawFunds),
-  method(({ action }) => action === DEPOSIT_ACTION, actionDepositFunds),
+  method(({ action }) => action === WITHDRAWL_ACTION, withdrawFunds),
+  method(({ action }) => action === DEPOSIT_ACTION, depositFunds),
 )
 
 export function AccountActions({ id }) {

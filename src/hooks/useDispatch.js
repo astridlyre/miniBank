@@ -1,8 +1,12 @@
-import { useContext, useMemo } from 'react'
+import { useContext, useCallback } from 'react'
 import { StoreContext } from '../store/'
 
 export function useDispatch() {
-  const [, dispatch] = useContext(StoreContext)
+  const [state, dispatch] = useContext(StoreContext)
+  const getState = useCallback(() => state, [state])
 
-  return useMemo(() => dispatch, [dispatch])
+  return useCallback(
+    (action) => action(dispatch, getState),
+    [dispatch, getState],
+  )
 }

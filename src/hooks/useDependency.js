@@ -5,8 +5,9 @@ export function useDependency(content) {
   const [data, setData] = useState(null)
 
   const dataStrategy = useMemo(() => strategy(content), [content])
+
   const getter = useCallback(
-    () => setData(dataStrategy.load(content)),
+    async () => setData(await dataStrategy.load(content)),
     [content, dataStrategy],
   )
 

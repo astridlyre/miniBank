@@ -26,10 +26,13 @@ export function Theme({ children }) {
   const value = useMemo(() => [currentTheme, setter], [currentTheme, setter])
 
   useEffect(() => {
-    const storedTheme = service.load('theme')
-    if (storedTheme) {
-      setCurrentTheme(storedTheme)
+    const loadTheme = async () => {
+      const storedTheme = await service.load('theme')
+      if (storedTheme) {
+        setCurrentTheme(storedTheme)
+      }
     }
+    loadTheme()
   }, [])
 
   return (
