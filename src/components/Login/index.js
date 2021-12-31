@@ -20,6 +20,12 @@ const TEST_ACCOUNTS = [
     amount: 24583.43,
     id: nanoid(),
   },
+  {
+    type: 'RRSP High Interest Account',
+    currency: 'CAD',
+    amount: 54583.43,
+    id: nanoid(),
+  },
 ]
 
 const variants = { a: { opacity: 0, y: -25 }, b: { opacity: 1, y: 0 } }
