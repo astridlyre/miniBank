@@ -1,9 +1,10 @@
 .form {
-  background-color: var(--primary);
+  background-color: var(--light-bg);
   padding: var(--sm-spacing);
   border-radius: var(--base-unit);
   margin-top: var(--md-spacing);
   max-width: 24rem;
+  box-shadow: var(--light-box-shadow);
 }
 
 @media (min-width: 800px) {

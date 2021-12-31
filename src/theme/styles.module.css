@@ -50,11 +50,27 @@
 
 .switcher {
   position: absolute;
+  overflow: hidden;
+  display: flex;
   bottom: var(--base-unit);
   right: var(--base-unit);
   background-color: var(--light-bg);
-  padding: var(--base-unit);
   border-radius: var(--base-unit);
+  border: none;
+  box-shadow: var(--light-box-shadow);
+}
+
+.switchIcon {
+  color: var(--light-fg);
+  padding: var(--base-unit);
+  height: 2rem;
+  width: 2rem;
+}
+
+.switcher:hover,
+.switcher:focus {
+  box-shadow: var(--dark-box-shadow);
+  cursor: pointer;
 }
 
 .switcherUl {
@@ -76,6 +92,7 @@
   background: none;
   padding: var(--base-unit);
   color: var(--default-fg);
+  outline-offset: -2px;
 }
 
 .switcherButton:hover {
@@ -83,4 +100,8 @@
   color: var(--default-fg);
   cursor: pointer;
   border-radius: var(--base-unit);
+}
+
+.switcherButtons {
+  padding: var(--base-unit);
 }

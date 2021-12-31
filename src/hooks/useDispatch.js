@@ -1,8 +1,8 @@
-import { useContext } from 'react'
+import { useContext, useMemo } from 'react'
 import { StoreContext } from '../store/'
 
 export function useDispatch() {
   const [, dispatch] = useContext(StoreContext)
 
-  return dispatch
+  return useMemo(() => dispatch, [dispatch])
 }
