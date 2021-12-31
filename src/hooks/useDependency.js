@@ -1,19 +1,13 @@
-import { multi, method } from '@ebflat9/fp'
 import { useState, useMemo, useEffect, useCallback } from 'react'
-
-const strategy = multi(
-  method(
-    (key) => key === 'user',
-    (key, setter) => setter(JSON.parse(localStorage.getItem(key))),
-  ),
-)
+import { strategy } from '../services/'
 
 export function useDependency(content) {
   const [data, setData] = useState(null)
 
+  const dataStrategy = useMemo(() => strategy(content), [content])
   const getter = useCallback(
-    () => strategy(content, setData),
-    [content, setData],
+    () => setData(dataStrategy.load(content)),
+    [content, dataStrategy],
   )
 
   useEffect(() => getter(), [getter])

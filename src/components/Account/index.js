@@ -1,13 +1,20 @@
+import { ErrorBoundary } from '../../errors/'
+import { Expandable } from '../Expandable/'
+import { AccountActions } from '../AccountActions/'
+import { Header } from './Header'
 import * as styles from './styles.module.css'
 
-export function Account({ type, currency, amount }) {
+export function Account({ type, currency, amount, id }) {
   return (
-    <li className={styles.root}>
-      <h4 className={styles.accountType}>{type}</h4>
-      <p className={styles.accountBalance}>
-        Account Balance: <span className={styles.accountAmount}>{amount}</span>{' '}
-        <small className={styles.accountCurrency}>{currency}</small>
-      </p>
-    </li>
+    <ErrorBoundary>
+      <Expandable className={styles.root}>
+        <Expandable.Header className={styles.accountHeader}>
+          <Header type={type} currency={currency} amount={amount} />
+        </Expandable.Header>
+        <Expandable.Content>
+          <AccountActions id={id} amount={amount} />
+        </Expandable.Content>
+      </Expandable>
+    </ErrorBoundary>
   )
 }

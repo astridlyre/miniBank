@@ -1,18 +1,22 @@
 .root {
+  border: none;
   width: 100%;
   display: flex;
+  flex-flow: column wrap;
   justify-content: space-between;
-  padding: var(--sm-spacing);
   background-color: var(--light-bg);
   border-radius: var(--base-unit);
   box-shadow: var(--light-box-shadow);
 }
 
-.accountAmount {
-  color: var(--default-fg);
-  font-weight: 600;
+.root:hover {
+  box-shadow: var(--dark-box-shadow);
 }
 
-.accountCurrency {
-  font-weight: 500;
+.accountHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+  width: 100%;
+  padding: var(--sm-spacing);
 }

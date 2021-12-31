@@ -1,10 +1,12 @@
 .button {
-  padding: var(--base-spacing);
+  padding: var(--base-spacing) var(--sm-spacing);
   border: none;
-  background: var(--secondary);
+  background-color: var(--secondary);
   color: var(--light-fg);
   border-radius: var(--base-unit);
   box-shadow: var(--dark-box-shadow);
+  font-size: var(--small-font);
+  font-weight: 500;
 }
 
 .contained {

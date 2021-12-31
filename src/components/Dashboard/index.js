@@ -6,18 +6,8 @@ import { Button } from '../Button/'
 import { Accounts } from '../Accounts/'
 import * as styles from './styles.module.css'
 
-const variants = {
-  a: {
-    opacity: 0,
-    y: -10,
-  },
-  b: {
-    opacity: 1,
-    y: 0,
-  },
-}
-
-const transition = { duration: 0.2 }
+const variants = { a: { opacity: 0, y: -25 }, b: { opacity: 1, y: 0 } }
+const transition = { duration: 0.5, type: 'spring' }
 
 export function Dashboard({ user }) {
   const dispatch = useDispatch()

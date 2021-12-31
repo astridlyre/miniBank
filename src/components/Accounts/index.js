@@ -5,11 +5,11 @@ export function Accounts({ accounts }) {
   return (
     <section className={styles.section}>
       <h3 className={styles.title}>Your Accounts</h3>
-      <ul className={styles.ul}>
+      <div className={styles.ul}>
         {accounts.map((account) => (
           <Account key={account.id} {...account} />
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

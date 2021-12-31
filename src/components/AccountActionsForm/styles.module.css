@@ -1,0 +1,12 @@
+.actionForm {
+  display: flex;
+  align-items: end;
+  margin-top: var(--base-spacing);
+  gap: var(--base-spacing);
+  width: 100%;
+}
+
+.input {
+  background-color: var(--default-bg);
+  flex-grow: 1;
+}

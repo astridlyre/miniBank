@@ -7,18 +7,23 @@ import { LabeledInput } from '../LabeledInput/'
 import { Button } from '../Button/'
 import * as styles from './styles.module.css'
 
-const variants = {
-  a: {
-    opacity: 0,
-    y: -10,
+const TEST_ACCOUNTS = [
+  {
+    type: 'Chequing',
+    currency: 'CAD',
+    amount: 4567.76,
+    id: nanoid(),
   },
-  b: {
-    opacity: 1,
-    y: 0,
+  {
+    type: 'Savings',
+    currency: 'CAD',
+    amount: 24583.43,
+    id: nanoid(),
   },
-}
+]
 
-const transition = { duration: 0.2 }
+const variants = { a: { opacity: 0, y: -25 }, b: { opacity: 1, y: 0 } }
+const transition = { duration: 0.5, type: 'spring' }
 
 export function Login() {
   const dispatch = useDispatch()
@@ -30,23 +35,7 @@ export function Login() {
       const loginInfo = Object.fromEntries(new FormData(event.target))
       event.target.reset()
       dispatch(
-        actionLogin({
-          name: loginInfo.username,
-          accounts: [
-            {
-              type: 'Chequing',
-              currency: 'CAD',
-              amount: 4567.76,
-              id: nanoid(),
-            },
-            {
-              type: 'Savings',
-              currency: 'CAD',
-              amount: 24583.43,
-              id: nanoid(),
-            },
-          ],
-        }),
+        actionLogin({ name: loginInfo.username, accounts: TEST_ACCOUNTS }),
       )
     },
     [dispatch],

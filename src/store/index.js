@@ -1,5 +1,7 @@
 import { useReducer, createContext } from 'react'
-import { LOGIN, LOGOUT } from './actions'
+import { DEPOSIT_FUNDS, LOGIN, LOGOUT, WITHDRAW_FUNDS } from './actions'
+import { add, subtract } from '@ebflat9/fp'
+import { strategy } from '../services/'
 
 export const StoreContext = createContext({})
 
@@ -7,14 +9,38 @@ const initialState = {
   user: null,
 }
 
+function alterAccountFunds(fn) {
+  return (state, funds) => ({
+    ...state,
+    user: {
+      ...state.user,
+      accounts: state.user.accounts.map((account) =>
+        account.id === funds.id
+          ? { ...account, amount: fn(account.amount, funds.amount) }
+          : account,
+      ),
+    },
+  })
+}
+
 function storeReducer(state, action) {
   switch (action.type) {
     case LOGIN:
-      localStorage.setItem('user', JSON.stringify(action.payload))
+      strategy('user').save('user', action.payload)
       return { ...state, user: action.payload }
     case LOGOUT:
-      localStorage.removeItem('user')
+      strategy('user').remove('user')
       return { ...state, user: null }
+    case WITHDRAW_FUNDS: {
+      const newState = alterAccountFunds(subtract)(state, action.payload)
+      strategy('user').save('user', newState.user)
+      return newState
+    }
+    case DEPOSIT_FUNDS: {
+      const newState = alterAccountFunds(add)(state, action.payload)
+      strategy('user').save('user', newState.user)
+      return newState
+    }
     default:
       return state
   }

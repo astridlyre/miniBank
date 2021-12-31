@@ -1,0 +1,9 @@
+.root {
+  padding: var(--sm-spacing);
+}
+
+.header {
+  display: flex;
+  justify-content: end;
+  gap: var(--base-spacing);
+}

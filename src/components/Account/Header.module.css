@@ -1,0 +1,8 @@
+.accountAmount {
+  color: var(--default-fg);
+  font-weight: 600;
+}
+
+.accountCurrency {
+  font-weight: 500;
+}
